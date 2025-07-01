@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="KycApplication.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    
+    <link rel="icon" type="img/png" href="Content/img/logoabhudaya.png">
+
+    <%--<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
+    <link href="Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Content/js/bootstrap.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 229px;
+            height: 40px;
+        }
+
+        .form-control {
+            margin: 7px 0 7px 0;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form runat="server">
+        <div class="sticky-top">
+
+
+            <header style="background-color: #ffe600;">
+                <div class="row">
+                    <div>
+                        <a class="navbar-brand" href="Default.aspx">
+                            <img src="Content/img/logoabhudaya.png" class="pl-5" /></a>
+                    </div>
+
+                    <div class="ml-auto pr-5 mt-3">
+                        <span style="color: #0056ae; font-size: 250%;">Online Re-KYC Portal</span>
+                    </div>
+                </div>
+            </header>
+
+
+
+            <nav class="navbar sticky navbar-expand-lg  " style="background-color: #016CB2; color: black;">
+
+
+
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                </div>
+
+
+            </nav>
+
+        </div>
+
+        <div class="row mt-2">
+            &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp  
+            <asp:Label ID="userid" Style="font-size: 120%;" runat="server" Text=""></asp:Label>&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+            <div class=" ml-auto " style="margin-right: 5%; font-size: 120%;">
+                <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblTime" runat="server" Text=""></asp:Label>
+
+                <br />
+
+
+
+
+            </div>
+        </div>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <%-- <footer>
+                 <hr />
+                <p> <img src="Content/img/chiclogo-bg.jpg"  class="auto-style1"  /></p>
+            </footer>--%>
+
+            <footer class="fixed-bottom " style="background-color: #ffffff;">
+
+                <img src="Content/img/chiclogo-bg.jpg" style="height: 50px; width: 145px" class="ml-5" />
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

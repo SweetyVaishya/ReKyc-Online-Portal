@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="KYCApllication_Admin.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Content/js/bootstrap.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+
+
+
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+    <style>
+        nav li a {
+            color: white;
+            padding:35px;
+            
+        }
+
+            nav li a:hover {
+                color: white;
+               
+            }
+    </style>
+
+
+</head>
+<body>
+    <form runat="server">
+
+
+        <%-- header start --%>
+
+        <header class="sticky-top" style="background-color: #ffe600;">
+            <div class="row">
+                <div>
+                    <a class="navbar-brand" href="home.aspx">
+                        <img src="Content/img/logoabhudaya.png" class="pl-5" /></a>
+                </div>
+
+                <div class="ml-auto pr-5 mt-3">
+                     <span style="color: #0056ae; font-size: 250%;">Online Re-KYC Portal</span>
+                </div>
+            </div>
+        </header>
+
+        <%-- header end --%>
+
+        <%-- navbar start--%>
+        <nav class="navbar sticky navbar-expand-lg  " style="background-color: #016CB2; color: black;">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <img src="Content/img/menu7666.png" style="height: 100%; width: 100%;" />
+                </span>
+            </button>
+
+            <div class="ml-4" style="font-size:120%; color:white;">
+                 <asp:Label ID="userid" runat="server" Text=""></asp:Label>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home.aspx">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Managereport.aspx">Manage Report</a>
+                    </li>
+
+                    <li id="ManageUser" class="nav-item" runat="server" visible="false">
+                        <a class="nav-link" href="ManageUser.aspx">Manage User</a>
+                    </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="UpdateAccountData.aspx">Add New Account</a>
+                    </li>
+
+                    <li class="nav-item mt-2">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                    </li>
+
+                </ul>
+
+
+           
+
+            </div>
+
+             
+        </nav>
+
+
+        <%-- navbar end--%>
+
+        <div style="text-align: right;" class="pr-4 ">
+            <div class="mr-5 mt-3">
+                <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblTime" runat="server" Text=""></asp:Label>
+                <br />
+                
+        <%--   user name:--%>
+          <%--<asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>--%>
+                
+
+
+          
+            </div>
+        </div>
+
+       <%-- <div class="container-fluid body-content">--%>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+      <%--  </div>--%>
+
+        <%-- footer start--%>
+
+        <footer class="fixed-bottom  " style="margin-top:5%;" >
+
+            <img src="Content/img/chiclogo-bg.jpg" style="height: 50px; width: 145px" class="ml-5" />
+        </footer>
+
+        <%-- footer end--%>
+    </form>
+    <script src="Content/js/jquery.slim.min.js"></script>
+    <script src="Content/js/popper.min.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <script src="Content/js/bootstrap.js"></script>
+    <%-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>--%>
+</body>
+</html>

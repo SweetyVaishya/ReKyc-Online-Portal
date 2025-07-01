@@ -1,0 +1,35 @@
+use KYCapplication
+
+
+create table kycdetail(
+id int primary key not null identity,
+Kycid varchar(300),
+Name varchar (500),
+acoount_no varchar (50),
+mobail_no varchar (20),
+accout_type varchar(250),
+pancardno_HA varchar (250),
+pancardverify_HA varchar (250),
+pancardno_HB varchar (250),
+pancardverify_HB varchar (250),
+Aadharcardno_HA varchar (250),
+Aadharcardverify_HA varchar (250),
+Aadharcardno_HB varchar (250),
+Aadharcardverify_HB varchar (250),
+Alternativmob_HA varchar(20),
+Alternativmob_HB varchar(20),
+CurrentAdd_HA varchar(500),
+CurrentAdd_HB varchar(500),
+IncomeSource_HA varchar(300),
+IncomeSource_HB varchar(300),
+empbussname_HA varchar(300),
+empbussname_HB varchar(300),
+worktype_HA varchar(300),
+worktype_HB varchar(300),
+Incomefrom_HA varchar (250),
+Incometo_HA varchar(250),
+Incomefrom_HB varchar (250),
+Incometo_HB varchar(250),
+Create_at datetime default current_timestamp,
+)
+

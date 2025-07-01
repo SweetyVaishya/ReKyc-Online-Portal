@@ -1,0 +1,22 @@
+
+
+Database Table 
+
+ 1) Table Name - kycdetail
+
+Add Columns - PancardFileNm varchar(1000)
+              AadharcardFileNm varchar(1000)
+	     [AuthorizeAadhar] [varchar](500) NULL,
+	     [AuthorizationTitle] [varchar](5000) NULL
+
+
+
+ 2) Table Name - TblOmtDetail
+
+Add Columns - Risk varchar(500)
+
+
+3) Table Name - kycdetail
+
+   Add Columns - AuthorizePan  varchar(500)
+                 AuthorizationTitlePan varchar(5000) 
